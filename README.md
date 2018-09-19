@@ -1,0 +1,1 @@
+# static_carrier_inventory
