@@ -1,0 +1,22 @@
+[
+  {
+    "id": "2",
+    "name": "UK_TEST_01",
+    "customer_site_name": "Headquarters",
+    "address": "10 Arkham Way, Gotham, United Kingdom, G12 3TH",
+    "city": "Gotham",
+    "country": "UK",
+    "number_of_ports": "2",
+    "can_order_capacity": "false"
+},
+  {
+    "id": "3",
+    "name": "UK_TEST_02",
+    "customer_site_name": "LexCorp Head Office",
+    "address": "34 Lexington St, London, United Kingdom, W1F 01B",
+    "city": "London",
+    "country": "UK",
+    "number_of_ports": "2",
+    "can_order_capacity": "false"
+  }
+]

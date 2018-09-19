@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "1000BASE-T",
+    "description": "Twisted pair electrical 1Gbps ethernet port",
+    "bandwidth": 1000,
+    "connector": "RJ45",
+    "service_type":"ETHERNETPORT",
+    "ports_available": "true",
+    "siteport_request_id": 2
+  },
+  {
+    "id": 2,
+    "name": "1000BASE-LX",
+    "description":"Multimode fibre 1Gbps ethernet port",
+    "bandwidth":1000,
+    "connector":"LC",
+    "service_type": "ETHERNETPORT",
+    "ports_available": "true",
+    "siteport_request_id": 3
+  }
+  {
+    "id": 3,
+    "name": "1000BASE-T",
+    "description": "Twisted pair electrical 10Gbps ethernet port",
+    "bandwidth": 10000,
+    "connector": "RJ45",
+    "service_type":"ETHERNETPORT",
+    "ports_available": "true",
+    "siteport_request_id": 2
+  },
+  {
+    "id": 4,
+    "name": "1000BASE-LX",
+    "description": "Multimode fibre 10Gbps ethernet port",
+    "bandwidth": 10000,
+    "connector": "LC",
+    "service_type": "ETHERNETPORT",
+    "ports_available": "true",
+    "siteport_request_id": 3
+  }
+]
