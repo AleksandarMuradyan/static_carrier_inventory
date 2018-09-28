@@ -1,0 +1,87 @@
+[
+  {
+    "id":                       1013,
+    "description":              "1Gbps ethernet circuit",
+    "siteType1":                "DCNET-UK-LON",
+    "siteType2":                "DCNET-UK-LON",
+    "comment":                  "1Gbps UK London Metro GBP",
+    "bandwidth":                1000,
+    "rental_charge":            0.77,
+    "rental_unit":              "HOURLY",
+    "rental_currency":          "GBP",
+    "installation_charge":      470.0,
+    "installation_currency":    "GBP",
+    "modification_charge":      0.0,
+    "modification_currency":    "GBP",
+    "decommissioning_charge":   0.0,
+    "decommissioning_currency": "GBP",
+    "commitment_period":        24,
+    "coterminus_option":        false,
+    "service_type":             "ETHERNETCIRCUIT"
+  },
+  {
+    "id":                       1050,
+    "description":              "1Gbps ethernet circuit",
+    "siteType1":                "DCNET-UK-LON",
+    "siteType2":                "DCNET-UK-LON",
+    "comment":                  "1Gbps UK London Metro GBP",
+    "bandwidth":                1000,
+    "rental_charge":            0.75,
+    "rental_unit":              "HOURLY",
+    "rental_currency":          "GBP",
+    "installation_charge":      470.0,
+    "installation_currency":    "GBP",
+    "modification_charge":      0.0,
+    "modification_currency":    "GBP",
+    "decommissioning_charge":   0.0,
+    "decommissioning_currency": "GBP",
+    "commitment_period":        36,
+    "coterminus_option":        false,
+    "service_type":             "ETHERNETCIRCUIT"
+
+  }
+  ,
+  {
+    "id":                       1051,
+    "description":              "1Gbps ethernet circuit",
+    "siteType1":                "DCNET-UK-LON",
+    "siteType2":                "DCNET-UK-LON",
+    "comment":                  "1Gbps UK London Metro GBP",
+    "bandwidth":                1000,
+    "rental_charge":            0.75,
+    "rental_unit":              "HOURLY",
+    "rental_currency":          "GBP",
+    "installation_charge":      470.0,
+    "installation_currency":    "GBP",
+    "modification_charge":      0.0,
+    "modification_currency":    "GBP",
+    "decommissioning_charge":   0.0,
+    "decommissioning_currency": "GBP",
+    "commitment_period":        36,
+    "coterminus_option":        false,
+    "service_type":             "ETHERNETPORT"
+
+  }
+  ,
+  {
+    "id":                       1054,
+    "description":              "1Gbps ethernet circuit",
+    "siteType1":                "DCNET-UK-LON",
+    "siteType2":                "DCNET-UK-LON",
+    "comment":                  "1Gbps UK London Metro GBP",
+    "bandwidth":                1000,
+    "rental_charge":            0.75,
+    "rental_unit":              "HOURLY",
+    "rental_currency":          "GBP",
+    "installation_charge":      470.0,
+    "installation_currency":    "GBP",
+    "modification_charge":      0.0,
+    "modification_currency":    "GBP",
+    "decommissioning_charge":   0.0,
+    "decommissioning_currency": "GBP",
+    "commitment_period":        36,
+    "coterminus_option":        false,
+    "service_type":             "ETHERNETPORT"
+
+  }
+]

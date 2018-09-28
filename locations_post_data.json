@@ -1,0 +1,12 @@
+{
+    "customer_location_list": [
+    {
+    "site_id":            "2",
+    "customer_site_name": "Headquarters"
+    },
+    {
+    "site_id":            "543",
+    "customer_site_name": "LexCorp Head Office"
+    }
+    ]
+}

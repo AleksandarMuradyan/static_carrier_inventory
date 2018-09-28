@@ -1,0 +1,30 @@
+{
+    "price_id": "10",
+    "connection_name": "My test connection",
+    "component_connections": [
+        {
+            "from_port_id": "80000121",
+            "to_port_id": "80000117",
+            "a_end_vlan_mapping": "FM",
+            "b_end_vlan_mapping": "X",
+            "a_end_vlan_type": "C",
+            "b_end_vlan_type": "C",
+            "a_end_vlan_ids": [
+                {
+                    "from_id_range": 1,
+                    "to_id_range": 1
+                },
+                {
+                    "from_id_range": 5,
+                    "to_id_range": 10
+                }
+            ],
+            "b_end_vlan_ids": [
+                {
+                    "from_id_range": 5,
+                    "to_id_range": 5
+                }
+            ]
+        }
+    ]
+}
