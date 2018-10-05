@@ -7,7 +7,7 @@
     "connector": "RJ45",
     "service_type":"ETHERNETPORT",
     "ports_available": "true",
-    "siteport_request_id": 2
+    "siteport_request_id": 1
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "connector":"LC",
     "service_type": "ETHERNETPORT",
     "ports_available": "true",
-    "siteport_request_id": 3
+    "siteport_request_id": 2
   }
   {
     "id": 3,
@@ -25,9 +25,9 @@
     "description": "Twisted pair electrical 10Gbps ethernet port",
     "bandwidth": 10000,
     "connector": "RJ45",
-    "service_type":"ETHERNETPORT",
+    "service_type":"ETHERNETCIRCUIT",
     "ports_available": "true",
-    "siteport_request_id": 2
+    "siteport_request_id": 3
   },
   {
     "id": 4,
@@ -35,8 +35,8 @@
     "description": "Multimode fibre 10Gbps ethernet port",
     "bandwidth": 10000,
     "connector": "LC",
-    "service_type": "ETHERNETPORT",
+    "service_type": "ETHERNETCIRCUIT",
     "ports_available": "true",
-    "siteport_request_id": 3
+    "siteport_request_id": 4
   }
 ]

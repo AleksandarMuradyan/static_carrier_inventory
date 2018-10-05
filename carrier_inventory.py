@@ -50,27 +50,19 @@ def requests():
 
 @app.route('/login', methods=['POST'])
 def login_post():
-    if request.method == 'POST':
-        # you can use <user_id>, which is a str but could
-        # changed to be int or whatever you want, along
-        # with your lxml knowl.edge to make the required
-        # changes
-        return request.json(os.path.join(basedir, 'login_post_data.json'))
-    # else:
-    #     with open(os.path.join(basedir, 'login_post_data.json'), 'r') as f:
-    #         return f.read()
+    with open(os.path.join(basedir, 'login_post_data.json'), 'r') as f:
+        return f.read()
 
 
 @app.route('/locations_post', methods=['POST'])
 def locations_post():
-    if request.method == 'POST':
-        return request.json(os.path.join(basedir, 'locations_post_data.json'))
-
+    with open(os.path.join(basedir, 'locations_post_data.json'), 'r') as f:
+        return f.read()
 
 @app.route('/ports_post', methods=['POST'])
 def ports_post():
-    if request.method == 'POST':
-        return request.json(os.path.join(basedir, 'ports_post_data.json'))
+    with open(os.path.join(basedir, 'ports_post_data.json'), 'r') as f:
+        return f.read()
     # return jsonify(
     #     {
     #         "price_id": "89",
@@ -81,9 +73,8 @@ def ports_post():
 
 @app.route('/connections_post', methods=['POST'])
 def connections_post():
-    if request.method == 'POST':
-        return request.json(os.path.join(basedir, 'connections_post_data.json'))
-
+    with open(os.path.join(basedir, 'connections_post_data.json'), 'r') as f:
+        return f.read()
 
 @app.errorhandler(404)
 def page_not_found(e):
