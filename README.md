@@ -19,14 +19,14 @@ if run with 'carrier_inventory.py --request_status failed' -> will return a fail
 API URIs:
 
 GET methods:
-http://127.0.0.1:8000/locations
-http://127.0.0.1:8000/products
-http://127.0.0.1:8000/ports
-http://127.0.0.1:8000/prices
-http://127.0.0.1:8000/requests
+http://127.0.0.1:8000/get/api/locations
+http://127.0.0.1:8000/get/api/products
+http://127.0.0.1:8000/get/api/ports
+http://127.0.0.1:8000/get/api/prices
+http://127.0.0.1:8000/get/api/requests
 
 POST methods:
-http://127.0.0.1:8000/login
-http://127.0.0.1:8000/locations_post
-http://127.0.0.1:8000/ports_post
-http://127.0.0.1:8000/connections_post
+http://127.0.0.1:8000/post/api/login
+http://127.0.0.1:8000/post/api/locations
+http://127.0.0.1:8000/post/api/ports
+http://127.0.0.1:8000/post/api/connections
