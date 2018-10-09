@@ -92,7 +92,7 @@ def test_locations_post(client):
 def test_ports_post(client):
     response = post_json(client, url8, {"site_id": "2"})
     assert response.status_code == 200
-    assert json_of_response(response) == {'location_id': '543', 'port_name': 'LexCorp Port', 'price_id': '89'}
+    assert 'response_url' in json_of_response(response)
 
 
 def test_conn_post(client):
