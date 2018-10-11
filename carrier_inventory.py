@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, Response
+from flask import Flask, jsonify, Response, request
 import json
 import os
 import argparse
@@ -14,33 +14,44 @@ def parseArguments():
     return args
 
 
-@app.route('/get/api/locations', methods=['GET'])
+@app.route('/api/locations', methods=['GET', 'POST'])
 def locations():
-    with open(os.path.join(basedir, 'locations_data.json'), 'r') as f:
-        return Response(f.read(), mimetype='application/json')
+    if request.method == 'POST':
+        with open(os.path.join(basedir, 'locations_post_data.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
+    else:
+        with open(os.path.join(basedir, 'locations_data.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
 
 
-@app.route('/get/api/products', methods=['GET'])
+@app.route('/api/products', methods=['GET'])
 def products():
     with open(os.path.join(basedir, 'ports_data.json'), 'r') as f:
         return Response(f.read(), mimetype='application/json')
 
 
-@app.route('/get/api/prices', methods=['GET'])
+@app.route('/api/prices', methods=['GET'])
 def prices():
     with open(os.path.join(basedir, 'ports_pricing_data.json'), 'r') as f:
         return Response(f.read(), mimetype='application/json')
 
 
-@app.route('/get/api/ports', methods=['GET'])
+@app.route('/api/ports', methods=['GET', 'POST'])
 def ports():
-    with open(os.path.join(basedir, 'port_spec_data.json'), 'r') as f:
-        return Response(f.read(), mimetype='application/json')
+    if request.method == 'GET':
+        with open(os.path.join(basedir, 'ports_get.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
+    else:
+        with open(os.path.join(basedir, 'ports_post_data.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
 
 
-@app.route('/get/api/requests', methods=['GET'])
+@app.route('/api/requests', methods=['GET', 'POST'])
 def requests():
-    if args.request_status == "completed":
+    if args.request_status == "completed" and request.method == 'GET':
+        with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
+    elif args.request_status == "completed" and request.method == 'POST':
         with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     else:
@@ -48,8 +59,8 @@ def requests():
             return Response(f.read(), mimetype='application/json')
 
 
-@app.route('/post/api/login', methods=['POST'])
-def login_post():
+@app.route('/api/login', methods=['POST'])
+def login():
     with open(os.path.join(basedir, 'login_post_data.json'), 'r') as f:
         return Response(f.read(), mimetype='application/json')
 
@@ -61,20 +72,8 @@ def login_post():
     #     return jsonify(token=generate_token(email, password))
 
 
-@app.route('/post/api/locations', methods=['POST'])
-def locations_post():
-    with open(os.path.join(basedir, 'locations_post_data.json'), 'r') as f:
-        return Response(f.read(), mimetype='application/json')
-
-
-@app.route('/post/api/ports', methods=['POST'])
-def ports_post():
-    with open(os.path.join(basedir, 'ports_post_data.json'), 'r') as f:
-        return Response(f.read(), mimetype='application/json')
-
-
-@app.route('/post/api/connections', methods=['POST'])
-def connections_post():
+@app.route('/api/connections', methods=['POST'])
+def connections():
     with open(os.path.join(basedir, 'connections_post_data.json'), 'r') as f:
         return Response(f.read(), mimetype='application/json')
 

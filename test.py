@@ -3,18 +3,18 @@ import pytest
 from carrier_inventory import app
 
 # GET methods:
-url = 'http://127.0.0.1:8000/get/api/locations'
-url1 = 'http://127.0.0.1:8000/get/api/locations'
-url2 = 'http://127.0.0.1:8000/get/api/products'
-url3 = 'http://127.0.0.1:8000/get/api/ports'
-url4 = 'http://127.0.0.1:8000/get/api/prices'
-url5 = 'http://127.0.0.1:8000/get/api/requests'
+url = 'http://127.0.0.1:8000/api/locations'
+url1 = 'http://127.0.0.1:8000/api/locations'
+url2 = 'http://127.0.0.1:8000/api/products'
+url3 = 'http://127.0.0.1:8000/api/ports'
+url4 = 'http://127.0.0.1:8000/api/prices'
+url5 = 'http://127.0.0.1:8000/api/requests'
 
 # POST methods:
-url6 = 'http://127.0.0.1:8000/post/api/login'
-url7 = 'http://127.0.0.1:8000/post/api/locations'
-url8 = 'http://127.0.0.1:8000/post/api/ports'
-url9 = 'http://127.0.0.1:8000/post/api/connections'
+url6 = 'http://127.0.0.1:8000/api/login'
+url7 = 'http://127.0.0.1:8000/api/locations'
+url8 = 'http://127.0.0.1:8000/api/ports'
+url9 = 'http://127.0.0.1:8000/api/connections'
 
 
 @pytest.fixture
@@ -55,9 +55,8 @@ def test_products(client):
 def test_ports_spec(client):
     response = client.get(url3)
     assert response.status_code == 200
-    assert b'"connector":	"RJ45"' in response.data
+    assert b'port_type' in response.data
     assert b'bandwidth' in response.data
-    assert b'port_id' in response.data
 
 
 def test_prices(client):
@@ -98,37 +97,7 @@ def test_ports_post(client):
 def test_conn_post(client):
     response = post_json(client, url9, {"price_id": "10"})
     assert response.status_code == 200
-    assert json_of_response(response) == {
-                                            "price_id": "10",
-                                            "connection_name": "My test connection",
-                                            "component_connections": [
-                                                {
-                                                    "from_port_id": "80000121",
-                                                    "to_port_id": "80000117",
-                                                    "a_end_vlan_mapping": "FM",
-                                                    "b_end_vlan_mapping": "X",
-                                                    "a_end_vlan_type": "C",
-                                                    "b_end_vlan_type": "C",
-                                                    "a_end_vlan_ids": [
-                                                        {
-                                                            "from_id_range": 1,
-                                                            "to_id_range": 1
-                                                        },
-                                                        {
-                                                            "from_id_range": 5,
-                                                            "to_id_range": 10
-                                                        }
-                                                    ],
-                                                    "b_end_vlan_ids": [
-                                                        {
-                                                            "from_id_range": 5,
-                                                            "to_id_range": 5
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-    assert "from_port_id" in str(response.data)
+    assert 'response_url' in json_of_response(response)
 
 
 # def test_products_api(client):
@@ -148,3 +117,4 @@ def test_conn_post(client):
 #         y = response.json
 #         print(y)
 #         #assert os.path.join(basedir, 'port_spec_data.json') in response.json
+    #assert "from_port_id" in str(response.data)
