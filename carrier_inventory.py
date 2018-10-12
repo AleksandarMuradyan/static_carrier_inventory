@@ -46,8 +46,8 @@ def ports():
             return Response(f.read(), mimetype='application/json')
 
 
-@app.route('/api/requests', methods=['GET', 'POST'])
-def requests():
+@app.route('/api/requests/<_id>', methods=['GET', 'POST'])
+def requests(_id):
     if args.request_status == "completed" and request.method == 'GET':
         with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
