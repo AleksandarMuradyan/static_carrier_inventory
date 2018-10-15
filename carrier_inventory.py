@@ -46,12 +46,15 @@ def ports():
             return Response(f.read(), mimetype='application/json')
 
 
-@app.route('/api/requests/<_id>', methods=['GET', 'POST'])
+@app.route('/api/requests/<int:_id>', methods=['GET', 'POST'])
 def requests(_id):
-    if args.request_status == "completed" and request.method == 'GET':
-        with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
+    if args.request_status == "completed" and request.method == 'GET' and _id == 4662:
+        with open(os.path.join(basedir, 'req_stat_4662.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
-    elif args.request_status == "completed" and request.method == 'POST':
+    elif args.request_status == "completed" and request.method == 'GET' and _id == 4663:
+        with open(os.path.join(basedir, 'req_stat_4663.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
+    elif args.request_status == "completed" and request.method == 'GET' and _id == '':
         with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     else:
