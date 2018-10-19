@@ -48,11 +48,11 @@ def ports():
 
 @app.route('/api/requests/<int:_id>', methods=['GET', 'POST'])
 def requests(_id):
-    if args.request_status == "completed" and request.method == 'GET' and _id == 4662:
-        with open(os.path.join(basedir, 'req_stat_4662.json'), 'r') as f:
+    if request.method == 'GET' and _id == 4662:
+       with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
-    elif args.request_status == "completed" and request.method == 'GET' and _id == 4663:
-        with open(os.path.join(basedir, 'req_stat_4663.json'), 'r') as f:
+    elif request.method == 'GET' and _id == 4663:
+        with open(os.path.join(basedir, 'requests_status_failed.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     elif args.request_status == "completed" and request.method == 'GET' and _id == '':
         with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
@@ -77,9 +77,12 @@ def login():
 
 @app.route('/api/connections', methods=['POST'])
 def connections():
-    with open(os.path.join(basedir, 'connections_post_data.json'), 'r') as f:
+    if args.request_status == "completed":
+      with open(os.path.join(basedir, 'connections_post_data_completed.json'), 'r') as f:
         return Response(f.read(), mimetype='application/json')
-
+    else:
+      with open(os.path.join(basedir, 'connections_post_data_failed.json'), 'r') as f:
+        return Response(f.read(), mimetype='application/json')
 
 @app.errorhandler(404)
 def page_not_found(e):
