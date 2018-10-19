@@ -42,8 +42,12 @@ def ports():
         with open(os.path.join(basedir, 'ports_get.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     else:
-        with open(os.path.join(basedir, 'ports_post_data.json'), 'r') as f:
-            return Response(f.read(), mimetype='application/json')
+        if request.form.get('locationId') == "FRLYO-0000149509":
+            with open(os.path.join(basedir, 'ports_post_data_lyon.json'),'r') as f:
+                return Response(f.read(), mimetype='application/json')
+        else:
+            with open(os.path.join(basedir, 'ports_post_data.json'), 'r') as f:
+                return Response(f.read(), mimetype='application/json')
 
 
 @app.route('/api/requests/<int:_id>', methods=['GET', 'POST'])
@@ -53,6 +57,9 @@ def requests(_id):
             return Response(f.read(), mimetype='application/json')
     elif request.method == 'GET' and _id == 4663:
         with open(os.path.join(basedir, 'requests_status_failed.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
+    if request.method == 'GET' and _id == 4664:
+       with open(os.path.join(basedir, 'requests_status_completed_lyons.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     elif args.request_status == "completed" and request.method == 'GET' and _id == '':
         with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:
