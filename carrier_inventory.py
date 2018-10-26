@@ -32,17 +32,22 @@ def products():
 
 @app.route('/api/prices', methods=['GET'])
 def prices():
-    with open(os.path.join(basedir, 'ports_pricing_data.json'), 'r') as f:
-        return Response(f.read(), mimetype='application/json')
+    if request.args.get('service_type') == "ETHERNETPORT":
+        with open(os.path.join(basedir, 'ports_pricing_data.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
+    else:
+        with open(os.path.join(basedir, 'evc_pricing_data.json'), 'r') as f:
+            return Response(f.read(), mimetype='application/json')
 
 
 @app.route('/api/ports', methods=['GET', 'POST'])
 def ports():
+    app.logger.debug('form data: %s', request.json)
     if request.method == 'GET':
         with open(os.path.join(basedir, 'ports_get.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     else:
-        if request.form.get('locationId') == "FRLYO-0000149509":
+        if request.json.get('location_id') == "FRLYO-0000149509":
             with open(os.path.join(basedir, 'ports_post_data_lyon.json'),'r') as f:
                 return Response(f.read(), mimetype='application/json')
         else:
@@ -59,7 +64,7 @@ def requests(_id):
         with open(os.path.join(basedir, 'requests_status_failed.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     if request.method == 'GET' and _id == 4664:
-       with open(os.path.join(basedir, 'requests_status_completed_lyons.json'), 'r') as f:
+       with open(os.path.join(basedir, 'requests_status_completed_lyon.json'), 'r') as f:
             return Response(f.read(), mimetype='application/json')
     elif args.request_status == "completed" and request.method == 'GET' and _id == '':
         with open(os.path.join(basedir, 'requests_status_completed.json'), 'r') as f:

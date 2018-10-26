@@ -6,10 +6,10 @@
     "siteType2":                "DCNET-UK-LON",
     "comment":                  "1Gbps UK London Metro GBP",
     "bandwidth":                100,
-    "rental_charge":            0.05,
+    "rental_charge":            0.77,
     "rental_unit":              "HOURLY",
     "rental_currency":          "GBP",
-    "installation_charge":      98.0,
+    "installation_charge":      201.0,
     "installation_currency":    "GBP",
     "modification_charge":      0.0,
     "modification_currency":    "GBP",
@@ -85,3 +85,4 @@
 
   }
 ]
+

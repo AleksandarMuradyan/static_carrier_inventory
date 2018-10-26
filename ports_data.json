@@ -3,7 +3,7 @@
     "id": 1,
     "name": "1000BASE-T",
     "description": "Twisted pair electrical 1Gbps ethernet port",
-    "bandwidth": 1000,
+    "bandwidth": 100,
     "connector": "RJ45",
     "service_type":"ETHERNETPORT",
     "ports_available": "true",
