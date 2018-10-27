@@ -1,5 +1,5 @@
 {
-  "id":                       4662,
+  "id":                       4664,
   "action":                   "CREATE",
   "status":                   "COMPLETED",
   "connector":                "RJ45",
@@ -10,8 +10,8 @@
   "service_id":               "1",
   "portal_user_id":           6,
   "port_id":                  "80000369",
-  "port_name":                "Paris UNI",
-  "location_name":            "Paris - 75017",
+  "port_name":                "Lyons - TStar NNI",
+  "location_name":            "Lyons - 69008",
   "product_name":             "1000BASE-T",
   "last_updated":             "2016-04-21T16:36:07+0100",
   "requested_at":             "2016-04-21T16:35:31+0100",
@@ -30,15 +30,16 @@
   "site_type":                "CEA",
   "site_floor":               "12",
   "site_room_name":           "Server Room",
-  "location_premises_number": "31/33",
+  "location_premises_number": "34",
   "location_building_name":   null,
-  "location_street_name":     "Avenue De Wagram",
-  "location_city":            "Paris",
+  "location_street_name":     "rue Saint Mathieu",
+  "location_city":            "Lyon",
   "location_country":         "France",
-  "postal_zip_code":          "75017",
+  "postal_zip_code":          "69008",
   "cloud_provider":           null,
   "azure_port":               null,
   "azure_vlan":               null,
   "resource_id_1":            null,
   "resource_id_2":            null
 }
+
